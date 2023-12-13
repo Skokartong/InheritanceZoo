@@ -4,7 +4,7 @@ namespace Lab6
 {
     class Program
     {
-        //Main-method
+        // Program that simulates animals at a zoo
         public static void Main(string[] args)
         {
             bool visit = true;
@@ -98,17 +98,23 @@ namespace Lab6
                 Console.WriteLine("Do you want to continue visit the zoo (Y/N)?");
                 string response = Console.ReadLine();
 
-                if (response == "N")
+                if (response.ToLower() == "n")
                 {
                     visit = false;
                     Console.WriteLine("Bye bye!");
                     break;
                 }
 
-                else
+                else if (response.ToLower() == "y")
                 {
                     Console.WriteLine("What do you want to do, (1-9)?");
                     reply = Console.ReadLine();
+                }
+
+                else
+                {
+                    Console.WriteLine("Invalid input!");
+                    visit = false;
                 }
             }
         }
